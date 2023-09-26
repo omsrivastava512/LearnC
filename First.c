@@ -1,7 +1,7 @@
 /* GUESS THE OUTPUT THEN COMPILE AND RUN THE CODE TO FIND OUT THE O/P
     */
 #include <stdio.h>
-
+ 
 
 int main()
 {   
