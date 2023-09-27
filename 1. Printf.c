@@ -11,6 +11,7 @@ int main()
     printf("First Program");  
 
     //anything other than a string needs a format specifier (ref: f-s)
+    printf("%d",5); 
     printf("%d",5+2); 
     //here, %d to tell 'printf()' to expect a decimal value (base 10)
     //Warning: Don't use 'printf(5)' else 'printf()' would treat it as a pointer (memory address), 
@@ -26,11 +27,11 @@ int main()
 
    //Other format specifiers
    /*Integers*/ /* %d, %u, %o, %x, %b */
-   printf("\n%d or %i is a signed integer",-100);           //-2,147,483,648 to 2,147,483,647 
+   printf("\n%d or %i is a signed integer",-100,+100);           //-2,147,483,648 to 2,147,483,647 
    printf("\n%u is a unsigned integer",100);         // 0 to 4,294,967,295
-   printf("\n%o is an octal integer",64);         //Convert to octal number system: 0 to 7, 10 to 17,...70 to 77, 100 to 777, etc
-   printf("\n%x is a hexadecimal integer",256);   //Convert to hexadecimal number system: 0 to 9, a to f, 10 to 19, 1a to 1f,...100 to fff, etc 
-   printf("\n%b is a binary integer",4);      //Not widely supported: Convert to binary number system: 0, 1, 10, 11,... 111, etc
+   printf("\n64 = %o is an octal integer ",64);         //Convert to octal number system: 0 to 7, 10 to 17,...70 to 77, 100 to 777, etc
+   printf("\n256 = %x is a hexadecimal integer (256)",256);   //Convert to hexadecimal number system: 0 to 9, a to f, 10 to 19, 1a to 1f,...100 to fff, etc 
+   printf("\n4 = %b is a binary integer",4);      //Not widely supported: Convert to binary number system: 0, 1, 10, 11,... 111, etc
    
    /*Floating-Point Numbers*/ /* %f, %e, %g */
    printf("\n\n%f has a decimal notation",5.);         //5.000000
@@ -49,20 +50,23 @@ int main()
    /* More about format-specifiers */
    printf("\n\n%p is the address of the string in hexadecimal number","this");         //Prints the memory address of the string "this" 
    printf("\n%p is the address of the variable in hexadecimal number", &var);        //Prints the memory address of the variable var
-   printf("\n%p is the hexadecimal value of the value stored in var", var);         //Acts as a hexadecimal converter without the address operator(&)
-   printf("\n Using dynamic width %*d", w, var);              // * is used to leave dynamic space (here, 10) before printing the variable
-   printf("\n Using static width %*d", 10, var);             // or you can just do this
-   printf("\n Using static width %10d", var);               // or you can do this
-   printf("\n Using static width %10c", var);              // or this
-   
-   
+   printf("\n%p is the hexadecimal value of the value stored in var = %d", var,var);         //Acts as a hexadecimal converter without the address operator(&)
+   printf("\n\nUsing dynamic width %*d", w, var);              // * is used to spare dynamic width (here, 10) for printing the variable
+   printf("\nUsing static width %*d", 10, var);             // or you can just do this
+   printf("\nUsing static width %10d", var);               // or you can do this
+   printf("\nUsing static width %10c", var);              // or this
+   /* Note: The values will be printed within this width. In case the value is longer than the width itself, you won't see any spaces. */
    /*Try this*/
+   printf("\nUsing static width %10s", "hello");              // hello occupies 5 widths
+   printf("\nUsing static width %10s", "hellohello");          // hellohello occupies all 10 widths 
+    
 
 
 
 
 
    /* Using Escape Sequences */
+    /* ++ --*/
    
    /*calc in printf*/
     
