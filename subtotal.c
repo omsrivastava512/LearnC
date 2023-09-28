@@ -1,24 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 int main(){
 int sum=0;
-int num;
-printf("Say the number:\n  ");
-  
-do{
-scanf("%d",&num);
-if(num){         //if num is true i.e num!=0
-  printf("+ ");
-  sum+=num;
-}
-}while(num);  //the loop breaks when the user gives zero as input
+char  num[20];
 
-/*If you enter a wrong number, just enter the negative of that number next time*/
+printf("Say the number:/n  ");
+do{
+scanf("%s",num);
+
+if(atoi(num)){        
+  printf("+ ");
+  sum+=atoi(num);
+  }
+}while(atoi(num));
 
 printf("Your total: %d",sum);
 
-/*Works fine unless the user gives a non-negative input*/
 
 return 0 ;
 }
