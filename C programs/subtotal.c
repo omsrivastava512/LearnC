@@ -1,3 +1,4 @@
+/* Check active pull requests to find enhanced versions of this program */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,11 +8,11 @@ int num;
 printf("Say the number:\n  ");
   
 do{
-scanf("%d",&num);
-if(num){         //if num is true i.e num!=0
-  printf("+ ");
-  sum+=num;
-}
+    scanf("%d",&num);
+    if(num){         //if num is true i.e num!=0
+      printf("+ ");
+      sum+=num;
+      }
 }while(num);  //the loop breaks when the user gives zero as input
 
 /*If you enter a wrong number, just enter the negative of that number next time*/
