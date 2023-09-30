@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-/*  method to check where the given digits are all integers  */
+/*  Method to check where the given digits are all numerical  */
 bool check(const char *c){
   //  since a string is a null-terminated array
     for(int i = 0;c[i]!='\0'; i++){            
