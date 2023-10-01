@@ -47,7 +47,7 @@ double toInt(const char* c) {
             c++;
         }
         while(*ptr!='\0'){
-            if(*c=='.')
+            if(*ptr=='.')
             break;
             decimal=decimal/10;
             ptr++;
@@ -69,7 +69,7 @@ int main(){
          
         
         
-        printf("Your total: %g\n", toInt(num));
+        printf("Your total: %f\n", toInt(num));
         }
         
         
