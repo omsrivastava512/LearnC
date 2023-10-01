@@ -19,7 +19,7 @@ double toInt(const char* c) {
     double result = 0;
     double decimal=0;
     int count=0;    //count the number of points
-    int sign = 10; // initialize sign as positive
+    int sign = 1; // initialize sign as positive
     if(check(c)){
         // skip white spaces
         while (*c == ' ') {
@@ -32,7 +32,8 @@ double toInt(const char* c) {
         }
         // convert characters to double
         while (*c!='.') {                  
-          
+           if(*c=='\0')
+           goto a;
             result = result * 10 + (*c - '0');
             c++;
         }
