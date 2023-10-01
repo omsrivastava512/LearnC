@@ -7,7 +7,7 @@
 bool check(const char *c){
   //  since a string is a null-terminated array
     for(int i = 0;c[i]!='\0'; i++){            
-      if(c[i]<'+' || c[i]>'9')
+      if(c[i]<'.' || c[i]>'9')
       	return false;
       	if(c[i]=='/'||c[i]==',')
       	return false;
@@ -20,7 +20,6 @@ double toInt(const char* c) {
     double decimal=0;
     int count=0;    //count the number of points
     int sign = 1; // initialize sign as positive
-    if(check(c)){
         // skip white spaces
         while (*c == ' ') {
             c++;
@@ -30,6 +29,7 @@ double toInt(const char* c) {
             sign = (*c=='-')? -1:1;
             c++;
         }
+    if(check(c)){
         // convert characters to double
         while (*c!='.') {                  
            if(*c=='\0')
