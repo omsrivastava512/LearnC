@@ -7,9 +7,9 @@
 bool check(const char *c){
   //  since a string is a null-terminated array
     for(int i = 0;c[i]!='\0'; i++){            
-      if(c[i]<'.' || c[i]>'9')
+      if(c[i]<'+' || c[i]>'9')
       	return false;
-      	if(c[i]=='/')
+      	if(c[i]=='/'||c[i]==',')
       	return false;
     }
 	return true;
@@ -17,8 +17,9 @@ bool check(const char *c){
 
 double toInt(const char* c) {
     double result = 0;
-    doubt decimal=0;
-    int sign = 1; // initialize sign as positive
+    double decimal=0;
+    int count=0;    //count the number of points
+    int sign = 10; // initialize sign as positive
     if(check(c)){
         // skip white spaces
         while (*c == ' ') {
@@ -26,40 +27,49 @@ double toInt(const char* c) {
         }
         // handle signs
         if (*c == '-' || *c == '+') {
-            sign = (*c == '-') ? -1 : 1;
+            sign = (*c=='-')? -1:1;
             c++;
         }
         // convert characters to double
         while (*c!='.') {                  
-           
+          
             result = result * 10 + (*c - '0');
             c++;
         }
+        
         const char* ptr =++c;
         
         while(*c!='\0'){
+            if(*c=='.')
+            break;
             decimal = decimal*10 + (*c - '0');
             c++;
         }
         while(*ptr!='\0'){
+            if(*c=='.')
+            break;
             decimal=decimal/10;
             ptr++;
         }
         
-        
+        a:
         // Apply sign
-        return sign * (result+decimal);
+        return sign * (result+decimal) ;
     }
 }
 
 int main(){
         char num[20];
+        int t=5;
+        while(--t){
+            
           printf("Say the number: ");
           scanf("%s",num);
          
         
         
-        printf("Your total: %g", toInt(num));
+        printf("Your total: %g\n", toInt(num));
+        }
         
         
         return 0 ;
