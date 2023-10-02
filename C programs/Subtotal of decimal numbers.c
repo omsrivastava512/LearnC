@@ -5,13 +5,19 @@
 
 /*  Method to check where the given digits are all numerical  */
 bool check(const char *c){
+    int i=0;
+    if(c[i]=='-'||c[i]=='+')
+        i++;
+    
   //  since a string is a null-terminated array
-    for(int i = 0;c[i]!='\0'; i++){            
+    do{            
       if(c[i]<'.' || c[i]>'9')
       	return false;
       	if(c[i]=='/'||c[i]==',')
       	return false;
+      	i++;
     }
+    while(c[i]!='\0');
 	return true;
 }
 
@@ -24,11 +30,11 @@ double toInt(const char* c) {
         while (*c == ' ') {
             c++;
         }
-        // handle signs
         if (*c == '-' || *c == '+') {
             sign = (*c=='-')? -1:1;
             c++;
         }
+        // handle signs
     if(check(c)){
         // convert characters to double
         while (*c!='.') {                  
@@ -61,16 +67,22 @@ double toInt(const char* c) {
 
 int main(){
         char num[20];
-        int t=5;
-        while(--t){
-            
+        double i=1, sum=0;
+        char* ptr;
+        do{
           printf("Say the number: ");
           scanf("%s",num);
-         
+          
+          if(!check(num))
+          continue;
+          
+          i=toInt(num);
+          sum+=i;
+        }        
+        while(i);
         
         
-        printf("Your total: %f\n", toInt(num));
-        }
+        printf("Your total: %g\n", sum);
         
         
         return 0 ;
