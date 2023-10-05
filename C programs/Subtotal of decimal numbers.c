@@ -7,7 +7,7 @@
 bool check(const char *c){
     int i=0; 				//using i as an index variable to access array characters
     if(c[i]=='-'||c[i]=='+')
-        i++;				//increament i value if the user has input a signed number
+        i++;				//increment i value if the user has input a signed number
     
   // Iterate through the string to check for valid numerical characters
 // Using do-while instead of while so in case of null input, the method does not return true by default
@@ -23,7 +23,7 @@ bool check(const char *c){
 }
 
 /* Convert the given string to a double */
-double toInt(const char* c) {
+double stringToDouble(const char* c) {
     double result = 0;
     double decimal=0;  		 
     int sign = 1; 		// Initialize sign as positive
@@ -80,7 +80,7 @@ int main(){
           if(!check(num)) 	// Ignoring invalid inputs
           continue;
           
-          i=toInt(num);
+          i=stringToDouble(num);
           sum+=i;
         }        
         while(i);
