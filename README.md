@@ -9,5 +9,5 @@ Please note that I have been using the command-line terminal to compile and run 
 
 ''>>a.exe
 
-or
+or 
 ''>>./a.out
